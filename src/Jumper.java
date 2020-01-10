@@ -9,6 +9,11 @@ public class Jumper {
         this.weight = (int)(80-Math.random()*20);
     }
 
+    public int jump(){
+        int baseJump = 100;
+        return (100 + (int)(this.getWeight()/this.getHeight()*Math.random()*30));
+    }
+
     public void setHeight(int height) {
         this.height = height;
     }

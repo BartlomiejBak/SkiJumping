@@ -7,5 +7,9 @@ public class SkiJumping {
         lista.showList();
     }
 
+    public StartingList firstRound(StartingList list){
+
+        return list;
+    }
 
 }
