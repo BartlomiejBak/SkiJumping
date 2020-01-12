@@ -1,15 +1,17 @@
 public class SkiJumping {
-
+    //todo comments
     public static void main(String[] args){
         System.out.println("jump");
-        int n = 30;
-        StartingList lista= new StartingList(30);
+        int n = 1;
+        StartingList lista = new StartingList(n);
         lista.showList();
+        lista.firstRound(lista);
+        lista.showFirstRound();
+        lista.secondRound(lista);
+        lista.showSecondRound();
+        lista.showTotalLength();
     }
 
-    public StartingList firstRound(StartingList list){
-
-        return list;
-    }
+//todo: style notes, elimination round, general classification
 
 }
