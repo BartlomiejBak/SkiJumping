@@ -1,5 +1,10 @@
+/**
+ * main method of skijumping app
+ * provides 2 jump tournament and shows final standings
+ * @author bartlomiej.bak
+ */
 public class SkiJumping {
-    //todo comments
+
     public static void main(String[] args){
         System.out.println("jump");
         int n = 1;
