@@ -17,6 +17,6 @@ public class SkiJumping {
         list.showTotalLength();
     }
 
-//todo: style notes, elimination round, general classification
+//todo: elimination round, general classification
 
 }

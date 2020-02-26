@@ -1,19 +1,21 @@
 public class Jump {
+
+    //flying phase of jump
+    private Style flightStyle;
+
+    // landing
     private boolean telemark;
     private boolean supportedLanding;
     private boolean fall;
     private double jumpLength;
-    private Flight flight;
 
-public Jump(boolean telemark, boolean supportedLanding, boolean fall, double jumpLength) {
-        this.telemark = telemark;
-        this.supportedLanding = supportedLanding;
-        this.fall = fall;
-        this.jumpLength = jumpLength;
+    public Jump(Jumper jumper, Hill hill) {
+
+
     }
 
-    public Flight getFlight() {
-        return flight;
+    public Style getFlightStyle() {
+        return flightStyle;
     };
 
     public boolean isTelemark() {
