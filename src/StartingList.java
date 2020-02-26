@@ -39,7 +39,8 @@ public class StartingList {
     public void showFirstRound(){
         for (Jumper jumper: list) {
             System.out.println("No: " + jumper.getStartingNo() + ", length: " + jumper.getFirstJumpLength());
-
+            System.out.println("score: " + jumper.getFirstJumpNote());
+            System.out.println("Total score: " + jumper.getTotalNote());
         }
     }
 
@@ -48,7 +49,7 @@ public class StartingList {
      */
     public void firstRound(StartingList list) {
         for (Jumper jumper : list.list) {
-            jumper.setFirstJumpLength();
+            jumper.setFirstJump();
         }
     }
 
@@ -58,7 +59,7 @@ public class StartingList {
      */
     public void secondRound(StartingList list){
         for (Jumper jumper:list.list) {
-            jumper.setSecondJumpLength();
+            jumper.setSecondJump();
         }
     }
 
@@ -68,6 +69,8 @@ public class StartingList {
     public void showSecondRound() {
         for (Jumper jumper: list) {
             System.out.println("No: " + jumper.getStartingNo() + ", length: " + jumper.getSecondJumpLength());
+            System.out.println("score: " + jumper.getSecondJumpNote());
+            System.out.println("Total score: " + jumper.getTotalNote());
         }
     }
 

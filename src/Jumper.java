@@ -15,7 +15,6 @@ public class Jumper {
     private double secondJumpStyle = 0;
     private double secondJumpNote = 0;
     private double totalLength = getFirstJumpLength() + getSecondJumpLength();
-    private double totalStyle = 0;
     private double totalNote = 0;
     public double[] notes = {16.0, 16.5, 17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0};
 
@@ -35,8 +34,8 @@ public class Jumper {
      */
     public double[] juryNotes(){
         double[] jNotes = new double[5];
-        for (double note:jNotes) {
-            note = this.notes[(int)(Math.random()*9)];
+        for (int i = 0; i < 5; i++){
+            jNotes[i] = this.notes[(int)(Math.random()*9)];
         }
         return jNotes;
     }
@@ -76,18 +75,24 @@ public class Jumper {
         return firstJumpLength;
     }
 
-    public void setFirstJumpLength() {
+    public void setFirstJump() {
         this.firstJumpLength = this.jump();
         this.totalLength = this.getFirstJumpLength() + this.getSecondJumpLength();
+        this.firstJumpStyle = this.juryFinalNote();
+        this.firstJumpNote = getFirstJumpLength() + getFirstJumpStyle();
+        this.totalNote = this.getFirstJumpNote() + this.getSecondJumpNote();
     }
 
     public double getSecondJumpLength() {
         return secondJumpLength;
     }
 
-    public void setSecondJumpLength() {
+    public void setSecondJump() {
         this.secondJumpLength = this.jump();
         this.totalLength = this.getFirstJumpLength() + this.getSecondJumpLength();
+        this.secondJumpStyle = this.juryFinalNote();
+        this.secondJumpNote = this.getSecondJumpLength() + this.getSecondJumpStyle();
+        this.totalNote = this.getFirstJumpNote() + this.getSecondJumpNote();
     }
 
     public double getTotalLength() {
@@ -98,47 +103,20 @@ public class Jumper {
         return firstJumpStyle;
     }
 
-    public void setFirstJumpStyle(double firstJumpStyle) {
-        this.firstJumpStyle = firstJumpStyle;
-    }
-
     public double getSecondJumpStyle() {
         return secondJumpStyle;
-    }
-
-    public void setSecondJumpStyle(double secondJumpStyle) {
-        this.secondJumpStyle = secondJumpStyle;
-    }
-
-    public double getTotalStyle() {
-        return totalStyle;
-    }
-
-    public void setTotalStyle(double totalStyle) {
-        this.totalStyle = totalStyle;
     }
 
     public double getFirstJumpNote() {
         return firstJumpNote;
     }
 
-    public void setFirstJumpNote(double firstJumpNote) {
-        this.firstJumpNote = firstJumpNote;
-    }
-
     public double getSecondJumpNote() {
         return secondJumpNote;
-    }
-
-    public void setSecondJumpNote(double secondJumpNote) {
-        this.secondJumpNote = secondJumpNote;
     }
 
     public double getTotalNote() {
         return totalNote;
     }
 
-    public void setTotalNote(double totalNote) {
-        this.totalNote = totalNote;
-    }
 }
