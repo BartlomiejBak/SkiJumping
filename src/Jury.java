@@ -1,5 +1,9 @@
 public class Jury {
     private String name;
+
+    public Jury() {
+    }
+
     private String nationality;
 
     public Jury(String name, String nationality) {
@@ -7,10 +11,16 @@ public class Jury {
         this.nationality = nationality;
     }
 
+
+    /**
+     * method for evaluating jump - note should be between 8.0 - 20.0
+     * @param jump Jump that will be evaluated
+     * @return double note for jump
+     */
     public double evaluate(Jump jump){
         double note = 20;
 
-        //flight - 0 to 5 points less from 20 points
+        //flight - 0 to 5 points less
         switch (jump.getFlightStyle()){
             case EXCELLENT:
                 note -= randomRange(0, 1);
@@ -35,6 +45,8 @@ public class Jury {
         } else if (!jump.isTelemark()){
             note -= 2;
         }
+
+        //todo diversity element - now every jury will set same note.
 
         return note;
     }
