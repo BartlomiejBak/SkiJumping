@@ -1,3 +1,5 @@
+package pl.bartekbak.skijumping.entities;
+
 public class Jury {
     private String name;
 
@@ -14,7 +16,7 @@ public class Jury {
 
     /**
      * method for evaluating jump - note should be between 8.0 - 20.0
-     * @param jump Jump that will be evaluated
+     * @param jump pl.bartekbak.skijumping.entities.Jump that will be evaluated
      * @return double note for jump
      */
     public double evaluate(Jump jump){

@@ -1,3 +1,7 @@
+package pl.bartekbak.skijumping.entities;
+
+import pl.bartekbak.skijumping.entities.Hill;
+import pl.bartekbak.skijumping.entities.Jump;
 
 /**
  * @author bartlomiej.bak
@@ -25,9 +29,9 @@ public class Jumper {
     }
 
     /**
-     * Jump on the hill
-     * @param hill Hill
-     * @return Jump
+     * pl.bartekbak.skijumping.entities.Jump on the hill
+     * @param hill pl.bartekbak.skijumping.entities.Hill
+     * @return pl.bartekbak.skijumping.entities.Jump
      */
     public Jump jump(Hill hill){
         Jump jump = new Jump(this, hill);

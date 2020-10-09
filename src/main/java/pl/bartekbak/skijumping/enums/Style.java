@@ -1,3 +1,5 @@
+package pl.bartekbak.skijumping.enums;
+
 /**
  * class providing style of the jump
  */

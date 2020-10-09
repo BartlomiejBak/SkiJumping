@@ -1,3 +1,7 @@
+package pl.bartekbak.skijumping.entities;
+
+import pl.bartekbak.skijumping.enums.HillType;
+
 /**
  * Class designed for ski jumping hills
  */

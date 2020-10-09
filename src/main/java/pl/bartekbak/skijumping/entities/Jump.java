@@ -1,3 +1,7 @@
+package pl.bartekbak.skijumping.entities;
+
+import pl.bartekbak.skijumping.enums.Style;
+
 public class Jump {
 
     //flying phase of jump

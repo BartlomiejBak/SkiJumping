@@ -1,3 +1,5 @@
+package pl.bartekbak.skijumping.entities;
+
 /**
  *
  * @author bartlomiej.bak

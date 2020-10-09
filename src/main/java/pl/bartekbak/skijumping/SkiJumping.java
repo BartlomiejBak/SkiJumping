@@ -1,3 +1,10 @@
+package pl.bartekbak.skijumping;
+
+import pl.bartekbak.skijumping.entities.Hill;
+import pl.bartekbak.skijumping.entities.Jump;
+import pl.bartekbak.skijumping.entities.Jumper;
+import pl.bartekbak.skijumping.entities.Jury;
+
 /**
  * main method of ski jumping app
  * provides 2 jump tournament and shows final standings
@@ -30,7 +37,7 @@ public class SkiJumping {
 
             System.out.println("Competitor " + competitor.getStartingNo()
             + " reached " + jump.getJumpLength() + " meters.");
-            System.out.print("Jury notes: ");
+            System.out.print("pl.bartekbak.skijumping.entities.Jury notes: ");
             double juryTotalNote = 0;
             double minNote = juryNotes[0];
             double maxNote = juryNotes[0];
@@ -40,7 +47,7 @@ public class SkiJumping {
                 if (note > maxNote) maxNote = note;
                 if (note < minNote) minNote = note;
             }
-            System.out.println("\nJump note: " + (jump.getJumpLengthNote() + juryTotalNote - maxNote - minNote));
+            System.out.println("\npl.bartekbak.skijumping.entities.Jump note: " + (jump.getJumpLengthNote() + juryTotalNote - maxNote - minNote));
         }
 
     }
