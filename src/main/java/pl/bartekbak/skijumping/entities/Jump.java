@@ -1,11 +1,13 @@
 package pl.bartekbak.skijumping.entities;
 
-import pl.bartekbak.skijumping.enums.Style;
+import lombok.Getter;
+import pl.bartekbak.skijumping.enums.JumpStyle;
 
+@Getter
 public class Jump {
 
     //flying phase of jump
-    private Style flightStyle = Style.NICE;
+    private JumpStyle flightStyle = JumpStyle.NICE;
     //todo implement style machanism
 
     // landing
@@ -49,30 +51,6 @@ public class Jump {
         }
 
         this.jumpLengthNote = baseJumpNote + (this.getJumpLength() - hill.getPointK()) * lengthNoteModifier;
-    }
-
-    public double getJumpLengthNote() {
-        return jumpLengthNote;
-    }
-
-    public Style getFlightStyle() {
-        return flightStyle;
-    }
-
-    public boolean isTelemark() {
-        return telemark;
-    }
-
-    public boolean isSupportedLanding() {
-        return supportedLanding;
-    }
-
-    public boolean isFall() {
-        return fall;
-    }
-
-    public double getJumpLength() {
-        return jumpLength;
     }
 
 }

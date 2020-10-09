@@ -5,6 +5,7 @@ package pl.bartekbak.skijumping.entities;
  * @author bartlomiej.bak
  */
 public class StartingList {
+
     Jumper[] list;
 
     /**

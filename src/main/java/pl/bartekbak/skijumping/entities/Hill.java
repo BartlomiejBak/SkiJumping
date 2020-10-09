@@ -1,20 +1,25 @@
 package pl.bartekbak.skijumping.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import pl.bartekbak.skijumping.enums.HillType;
 
 /**
  * Class designed for ski jumping hills
  */
 
+@Getter
 public class Hill {
+
     private static double worldLengthRecord;
 
-    private String name;
-    private String location;
-    private double hillSize;
-    private double pointK;
+    private final String name;
+    private final String location;
+    private final double hillSize;
+    private final double pointK;
+    private final HillType hillType;
+    @Setter
     private double record = 0;
-    private HillType hillType;
 
     public Hill(String name, String location, double hillSize, double pointK) {
         this.name = name;
@@ -30,41 +35,5 @@ public class Hill {
         } else {
             this.hillType = HillType.LARGE;
         }
-    }
-
-    public static double getWorldLengthRecord() {
-        return worldLengthRecord;
-    }
-
-    public static void setWorldLengthRecord(double worldLengthRecord) {
-        Hill.worldLengthRecord = worldLengthRecord;
-    }
-
-    public HillType getHillType() {
-        return hillType;
-    }
-
-    public double getRecord() {
-        return record;
-    }
-
-    public void setRecord(double record) {
-        this.record = record;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public double getHillSize() {
-        return hillSize;
-    }
-
-    public double getPointK() {
-        return pointK;
     }
 }
