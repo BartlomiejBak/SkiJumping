@@ -1,8 +1,8 @@
-package pl.bartekbak.skijumping.entities;
+package pl.bartekbak.skijumping.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.bartekbak.skijumping.enums.HillType;
+import pl.bartekbak.skijumping.domain.enums.HillType;
 
 /**
  * Class designed for ski jumping hills
@@ -11,7 +11,7 @@ import pl.bartekbak.skijumping.enums.HillType;
 @Getter
 public class Hill {
 
-    private static double worldLengthRecord;
+    static double worldLengthRecord;
 
     private final String name;
     private final String location;

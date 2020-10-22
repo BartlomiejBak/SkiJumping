@@ -1,4 +1,4 @@
-package pl.bartekbak.skijumping.enums;
+package pl.bartekbak.skijumping.domain.enums;
 
 public enum JumpStyle {
     EXCELLENT,

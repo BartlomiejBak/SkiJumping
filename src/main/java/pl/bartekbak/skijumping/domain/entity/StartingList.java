@@ -1,4 +1,4 @@
-package pl.bartekbak.skijumping.entities;
+package pl.bartekbak.skijumping.domain.entity;
 
 /**
  *

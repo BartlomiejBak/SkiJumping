@@ -1,14 +1,16 @@
-package pl.bartekbak.skijumping.entities;
+package pl.bartekbak.skijumping.domain.service;
 
 import lombok.Getter;
-import pl.bartekbak.skijumping.enums.JumpStyle;
+import pl.bartekbak.skijumping.domain.entity.Hill;
+import pl.bartekbak.skijumping.domain.entity.Jumper;
+import pl.bartekbak.skijumping.domain.enums.JumpStyle;
 
 @Getter
 public class Jump {
 
     //flying phase of jump
     private JumpStyle flightStyle = JumpStyle.NICE;
-    //todo implement style machanism
+    //todo implement style mechanism
 
     // landing
     private boolean telemark;

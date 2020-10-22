@@ -1,9 +1,8 @@
-package pl.bartekbak.skijumping.entities;
+package pl.bartekbak.skijumping.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.bartekbak.skijumping.entities.Hill;
-import pl.bartekbak.skijumping.entities.Jump;
+import pl.bartekbak.skijumping.domain.service.Jump;
 
 /**
  * @author bartlomiej.bak
@@ -35,9 +34,9 @@ public class Jumper {
     }
 
     /**
-     * pl.bartekbak.skijumping.entities.Jump on the hill
-     * @param hill pl.bartekbak.skijumping.entities.Hill
-     * @return pl.bartekbak.skijumping.entities.Jump
+     * pl.bartekbak.skijumping.domain.service.Jump on the hill
+     * @param hill pl.bartekbak.skijumping.domain.entity.Hill
+     * @return pl.bartekbak.skijumping.domain.service.Jump
      */
     public Jump jump(Hill hill){
         Jump jump = new Jump(this, hill);
