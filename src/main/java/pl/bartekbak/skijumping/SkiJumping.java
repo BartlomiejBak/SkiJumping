@@ -13,6 +13,10 @@ import pl.bartekbak.skijumping.domain.entity.Jury;
 public class SkiJumping {
 
     public static void main(String[] args){
+
+
+
+
         Jury[] juryTeam = new Jury[5];
         for (int i = 0; i < 5; i++) {
             juryTeam[i] = new Jury();

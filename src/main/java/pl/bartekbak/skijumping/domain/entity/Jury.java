@@ -1,31 +1,44 @@
 package pl.bartekbak.skijumping.domain.entity;
 
+import pl.bartekbak.skijumping.domain.enums.JumpStyle;
 import pl.bartekbak.skijumping.domain.service.Jump;
 
 public class Jury {
     private String name;
+    private String nationality;
 
     public Jury() {
     }
-
-    private String nationality;
 
     public Jury(String name, String nationality) {
         this.name = name;
         this.nationality = nationality;
     }
 
-
-    /**
-     * method for evaluating jump - note should be between 8.0 - 20.0
-     * @param jump pl.bartekbak.skijumping.domain.service.Jump that will be evaluated
-     * @return double note for jump
-     */
     public double evaluate(Jump jump){
         double note = 20;
 
-        //flight - 0 to 5 points less
-        switch (jump.getFlightStyle()){
+        note -= evaluateFlight(jump.getFlightStyle());
+        note -= evaluateLanding(jump);
+
+        return note;
+    }
+
+    private double evaluateLanding(Jump jump) {
+        double note = 0;
+        if (jump.isFall()){
+            note -= 7;
+        } else if (jump.isSupportedLanding()){
+            note -= randomRange(4, 5);
+        } else if (!jump.isTelemark()){
+            note -= 2;
+        }
+        return note;
+    }
+
+    private double evaluateFlight(JumpStyle jump) {
+        double note = 0;
+        switch (jump){
             case EXCELLENT:
                 note -= randomRange(0, 1);
                 break;
@@ -39,19 +52,6 @@ public class Jury {
                 note -= randomRange(3.5, 5);
                 break;
         }
-
-        //landing up to 7 points less
-
-        if (jump.isFall()){
-            note -= 7;
-        } else if (jump.isSupportedLanding()){
-            note -= randomRange(4, 5);
-        } else if (!jump.isTelemark()){
-            note -= 2;
-        }
-
-        //todo diversity element - now every jury will set same note.
-
         return note;
     }
 
@@ -61,9 +61,9 @@ public class Jury {
      * @return double from range [a, b] with 0.5 step
      */
 
-    public double randomRange (double a, double b){
-        double multiplier = (b - a) * 2 + 1;
-        multiplier *= Math.random();
-        return a + 0.5 * (int)multiplier;
+    private double randomRange (double a, double b){
+        double rangeSpread = (b - a) * 2 + 1;
+        rangeSpread *= Math.random();
+        return a + 0.5 * (int)rangeSpread;
     }
 }
