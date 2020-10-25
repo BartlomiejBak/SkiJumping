@@ -23,9 +23,6 @@ public class Jumper {
     //todo taking care of jumper skills
     private int takeOffSkill, flightSkill, landingSkill;
 
-    /**
-     * Creates new jumper with variable height (160-200 cm) and weight (60-80 kg) and random lvl of skills
-     */
     public Jumper() {
         jumpers++;
         this.startingNo = jumpers;
