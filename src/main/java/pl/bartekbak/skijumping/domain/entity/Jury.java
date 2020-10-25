@@ -4,15 +4,10 @@ import pl.bartekbak.skijumping.domain.enums.JumpStyle;
 import pl.bartekbak.skijumping.domain.service.Jump;
 
 public class Jury {
-    private String name;
-    private String nationality;
+    private int id;
 
-    public Jury() {
-    }
-
-    public Jury(String name, String nationality) {
-        this.name = name;
-        this.nationality = nationality;
+    public Jury(int id) {
+        this.id = id;
     }
 
     public double evaluate(Jump jump){
