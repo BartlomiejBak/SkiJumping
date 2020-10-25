@@ -1,8 +1,11 @@
 package pl.bartekbak.skijumping.domain.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.bartekbak.skijumping.domain.service.Jump;
+
+import java.util.Random;
 
 /**
  * @author bartlomiej.bak
@@ -10,34 +13,25 @@ import pl.bartekbak.skijumping.domain.service.Jump;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Jumper {
-    static int jumpers;
-
     private int startingNo;
-    private int height;
-    private int weight;
-    private double record = 0;
-    private double firstRound, secondRound, totalNote;
-    private Jump first, second;
+    private double personalBest;
+    private int takeOffSkill;
+    private int flightSkill;
+    private int landingSkill;
 
-    //todo taking care of jumper skills
-    private int takeOffSkill, flightSkill, landingSkill;
+    public Jumper(int startingNo) {
+        this.startingNo = startingNo;
+        this.personalBest = 0;
+        this.takeOffSkill = randomSkillValue();
+        this.flightSkill = randomSkillValue();
+        this.landingSkill = randomSkillValue();
 
-    public Jumper() {
-        jumpers++;
-        this.startingNo = jumpers;
-        this.height = (int)(200-Math.random()*40);
-        this.weight = (int)(80-Math.random()*20);
     }
 
-    /**
-     * pl.bartekbak.skijumping.domain.service.Jump on the hill
-     * @param hill pl.bartekbak.skijumping.domain.entity.Hill
-     * @return pl.bartekbak.skijumping.domain.service.Jump
-     */
-    public Jump jump(Hill hill){
-        Jump jump = new Jump(this, hill);
-        return jump;
+    private int randomSkillValue() {
+        Random random = new Random();
+        return random.nextInt(100);
     }
-
 }
