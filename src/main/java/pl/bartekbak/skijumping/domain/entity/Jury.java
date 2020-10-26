@@ -24,7 +24,7 @@ public class Jury {
         if (jump.isFall()){
             note -= 7;
         } else if (jump.isSupportedLanding()){
-            note -= randomRange(4, 5);
+            note -= randomValueRangeAAndB(4, 5);
         } else if (!jump.isTelemark()){
             note -= 2;
         }
@@ -35,28 +35,22 @@ public class Jury {
         double note = 0;
         switch (jump){
             case EXCELLENT:
-                note -= randomRange(0, 1);
+                note -= randomValueRangeAAndB(0, 1);
                 break;
             case NICE:
-                note -= randomRange(1.5, 2);
+                note -= randomValueRangeAAndB(1.5, 2);
                 break;
             case POOR:
-                note -= randomRange(2.5, 3);
+                note -= randomValueRangeAAndB(2.5, 3);
                 break;
             case MSTYLE:
-                note -= randomRange(3.5, 5);
+                note -= randomValueRangeAAndB(3.5, 5);
                 break;
         }
         return note;
     }
 
-    /**
-     * @param a integer low value
-     * @param b integer high value
-     * @return double from range [a, b] with 0.5 step
-     */
-
-    private double randomRange (double a, double b){
+    private double randomValueRangeAAndB(double a, double b){
         double rangeSpread = (b - a) * 2 + 1;
         rangeSpread *= Math.random();
         return a + 0.5 * (int)rangeSpread;

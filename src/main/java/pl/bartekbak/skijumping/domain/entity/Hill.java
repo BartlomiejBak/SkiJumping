@@ -4,10 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.bartekbak.skijumping.domain.enums.HillType;
 
-/**
- * Class designed for ski jumping hills
- */
-
 @Getter
 public class Hill {
 

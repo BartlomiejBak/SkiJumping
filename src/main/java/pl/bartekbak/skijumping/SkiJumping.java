@@ -19,7 +19,7 @@ public class SkiJumping {
 
         Jury[] juryTeam = new Jury[5];
         for (int i = 0; i < 5; i++) {
-            juryTeam[i] = new Jury();
+            juryTeam[i] = new Jury(i);
         }
         double[] juryNotes = new double[5];
 

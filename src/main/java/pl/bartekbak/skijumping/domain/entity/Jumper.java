@@ -7,10 +7,6 @@ import pl.bartekbak.skijumping.domain.service.Jump;
 
 import java.util.Random;
 
-/**
- * @author bartlomiej.bak
- */
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,7 +23,6 @@ public class Jumper {
         this.takeOffSkill = randomSkillValue();
         this.flightSkill = randomSkillValue();
         this.landingSkill = randomSkillValue();
-
     }
 
     private int randomSkillValue() {
