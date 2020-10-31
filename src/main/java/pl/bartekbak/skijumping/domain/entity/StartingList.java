@@ -1,19 +1,23 @@
 package pl.bartekbak.skijumping.domain.entity;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StartingList {
 
-    Jumper[] list;
+    private List<Jumper> list;
 
-    public StartingList(int n){
-        this.list = new Jumper[n];
-        fillList(list);
+
+    public StartingList(int numberOfJumpers){
+        this.list = new ArrayList<>();
+        fillList(numberOfJumpers);
     }
 
 
-    public void fillList(Jumper[] list){
-        for(int i = 0; i < list.length; i++){
-            list[i] = new Jumper();
+    private void fillList(int numberOfJumpers){
+        for(int i = 0; i < numberOfJumpers; i++){
+            this.list.add(new Jumper());
         }
     }
 
@@ -23,36 +27,4 @@ public class StartingList {
         }
     }
 
-    public void showFirstRound(){
-        for (Jumper jumper: list) {
-
-        }
-    }
-
-    public void firstRound(StartingList list) {
-        for (Jumper jumper : list.list) {
-
-        }
-    }
-
-
-    public void secondRound(StartingList list){
-        for (Jumper jumper:list.list) {
-
-        }
-    }
-
-
-    public void showSecondRound() {
-        for (Jumper jumper: list) {
-
-        }
-    }
-
-
-    public void showTotalLength() {
-        for (Jumper jumper: list) {
-
-        }
-    }
 }
