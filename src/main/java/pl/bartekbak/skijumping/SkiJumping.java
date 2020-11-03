@@ -16,7 +16,7 @@ public class SkiJumping {
 
 
 
-
+/*
         Jury[] juryTeam = new Jury[5];
         for (int i = 0; i < 5; i++) {
             juryTeam[i] = new Jury(i);
@@ -53,7 +53,7 @@ public class SkiJumping {
             }
             System.out.println("\npl.bartekbak.skijumping.domain.service.Jump note: " + (jump.getJumpLengthNote() + juryTotalNote - maxNote - minNote));
         }
-
+*/
     }
 
 

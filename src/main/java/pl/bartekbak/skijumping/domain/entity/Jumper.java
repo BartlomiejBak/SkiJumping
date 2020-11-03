@@ -13,6 +13,7 @@ import java.util.Random;
 public class Jumper {
     private int startingNo;
     private double personalBest;
+    //skill set
     private int takeOffSkill;
     private int flightSkill;
     private int landingSkill;
