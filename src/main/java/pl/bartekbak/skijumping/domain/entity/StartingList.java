@@ -1,6 +1,5 @@
 package pl.bartekbak.skijumping.domain.entity;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
