@@ -11,6 +11,8 @@ public class Jury {
     }
 
     public double evaluate(Jump jump){
+        if (jump == null) return 0.0;
+
         double note = 20;
 
         note -= evaluateFlight(jump.getFlightStyle());
@@ -22,11 +24,11 @@ public class Jury {
     private double evaluateLanding(Jump jump) {
         double note = 0;
         if (jump.isFall()){
-            note -= 7;
+            note = 7;
         } else if (jump.isSupportedLanding()){
-            note -= randomValueRangeAAndB(4, 5);
+            note = randomValueRangeAAndB(4, 5);
         } else if (!jump.isTelemark()){
-            note -= 2;
+            note = 2;
         }
         return note;
     }
@@ -35,16 +37,16 @@ public class Jury {
         double note = 0;
         switch (jump){
             case EXCELLENT:
-                note -= randomValueRangeAAndB(0, 1);
+                note = randomValueRangeAAndB(0, 1);
                 break;
             case NICE:
-                note -= randomValueRangeAAndB(1.5, 2);
+                note = randomValueRangeAAndB(1.5, 2);
                 break;
             case POOR:
-                note -= randomValueRangeAAndB(2.5, 3);
+                note = randomValueRangeAAndB(2.5, 3);
                 break;
             case MSTYLE:
-                note -= randomValueRangeAAndB(3.5, 5);
+                note = randomValueRangeAAndB(3.5, 5);
                 break;
         }
         return note;
