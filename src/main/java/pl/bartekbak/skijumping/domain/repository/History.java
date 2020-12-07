@@ -1,6 +1,6 @@
 package pl.bartekbak.skijumping.domain.repository;
 
-import pl.bartekbak.skijumping.domain.service.Contest;
+import pl.bartekbak.skijumping.domain.entity.Contest;
 
 import java.util.ArrayList;
 import java.util.List;

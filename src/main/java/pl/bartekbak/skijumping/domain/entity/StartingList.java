@@ -16,7 +16,7 @@ public class StartingList {
 
     private void fillList(int numberOfJumpers){
         for(int i = 0; i < numberOfJumpers; i++){
-            this.list.add(new Jumper());
+            this.list.add(new Jumper(i + 1));
         }
     }
 

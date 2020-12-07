@@ -1,11 +1,12 @@
-package pl.bartekbak.skijumping.domain.service;
+package pl.bartekbak.skijumping.domain.entity;
 
-import pl.bartekbak.skijumping.domain.entity.Hill;
-import pl.bartekbak.skijumping.domain.entity.Jury;
-import pl.bartekbak.skijumping.domain.entity.StartingList;
+import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Builder
+@Getter
 public class Contest {
     private LocalDateTime dateTime;
     private Hill hill;
