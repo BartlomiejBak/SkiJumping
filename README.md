@@ -1,6 +1,6 @@
 # Ski-jumping
 
-##Table of Contents
+## Table of Contents
 1. [General info](#General-info)
 2. [Technologies](#Technologies)
 3. [Setup](#Setup)
