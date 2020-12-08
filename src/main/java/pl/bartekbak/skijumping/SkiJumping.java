@@ -20,4 +20,5 @@ public class SkiJumping {
         MainView mainView = new MainView(scanner);
         mainView.init();
     }
+
 }

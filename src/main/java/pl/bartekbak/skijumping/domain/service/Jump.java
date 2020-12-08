@@ -113,7 +113,7 @@ public class Jump {
 
     private void fly(double inRunSpeed, double takeOffScore) {
         double lengthFactor = (inRunSpeed + takeOffScore) / 150;
-        this.jumpLength = lengthFactor * hill.getHillSize();
+        this.jumpLength = Math.round(lengthFactor * hill.getHillSize() * 2) / 2.0;
     }
 
 }

@@ -1,21 +1,19 @@
 package pl.bartekbak.skijumping.domain.entity;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Builder
-@Getter
+@Data
 public class Contest {
     private LocalDateTime dateTime;
     private Hill hill;
     private StartingList startingList;
 
     private List<Standing> standingList;
-    private List<Jury> jury;
+    private List<Jury> juryList;
 
     public Contest(LocalDateTime dateTime, Hill hill, StartingList startingList) {
         this.dateTime = dateTime;
@@ -26,9 +24,9 @@ public class Contest {
     }
 
     private void createJuryTeam() {
-        this.jury = new ArrayList<>();
+        this.juryList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            jury.add(new Jury(i + 1));
+            juryList.add(new Jury(i + 1));
         }
     }
 
@@ -37,5 +35,22 @@ public class Contest {
         for (Jumper jumper : startingList.getList()) {
             standingList.add(new Standing(jumper));
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Contest results\n" +
+                "date: " + dateTime +
+                "\nhill: " + hill.getName() + "\n" +
+                results();
+    }
+
+    private String results() {
+        String results = "";
+        for (int i = 1; i <= standingList.size(); i++) {
+            results += "\n" + i + " place: " +
+            standingList.get(i - 1).toString();
+        }
+        return results;
     }
 }

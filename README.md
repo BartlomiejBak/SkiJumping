@@ -25,12 +25,13 @@ Can be run via IDE.
 
 
 ## Status
-Under reconstruction - currently not working!
+Under reconstruction
 
 To do/to be completed:
-* basic functionality
+* ~~basic functionality~~
 * tests
 * saving/loading progress
-* import of hills and jumpers  
+* import of hills and jumpers
+* improve displaying results  
 * ...
 
