@@ -1,4 +1,4 @@
-version: 2.1
+version: 2.0
 
 jobs:
   build:
@@ -7,13 +7,22 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD
+    working_directory: ~/repo
+
+    environment:
+      MAVEN_OPTS: Xmx3200m
+    
     steps:
-      - run: java --version
+    - checkout
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        - v1-dependencies-
+    - run: mvn install -DskipTests
+    - run: mvn dependency:go-offline
 
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-      - maven/test # checkout, build, test, and upload test results
+    - save_cache:
+        paths:
+          - "~/.m2"
+        key: v1-dependencies-{{ checksum "pom.xml" }}
+    - run: mvn integration-test
